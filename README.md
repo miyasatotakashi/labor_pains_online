@@ -24,7 +24,7 @@ https://docs.google.com/spreadsheets/d/1YtLQ3Xczzy8skgY430RNQJu53TitRQGjxy7O0VAU
 ## テーブル定義書
 https://docs.google.com/spreadsheets/d/1YtLQ3Xczzy8skgY430RNQJu53TitRQGjxy7O0VAUflE/edit#gid=2020033787
 ## ER図
-![ER図](https://user-images.githubusercontent.com/110333630/203734611-bb4c5b0e-35c7-4330-abc4-5613aa6ab04e.jpg)
+![Er図 (2)](https://user-images.githubusercontent.com/110333630/203800685-42ec742b-aa8a-456d-ad4c-211cab41a435.jpg)
 ## 画面遷移図
 ![画面遷移図](https://user-images.githubusercontent.com/110333630/203734719-e70d57d7-f59b-4588-914c-417188f202e6.jpg)
 ## ワイヤーフレーム
