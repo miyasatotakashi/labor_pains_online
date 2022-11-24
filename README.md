@@ -26,6 +26,6 @@ https://docs.google.com/spreadsheets/d/1YtLQ3Xczzy8skgY430RNQJu53TitRQGjxy7O0VAU
 ## ER図
 ![Er図 (2)](https://user-images.githubusercontent.com/110333630/203800685-42ec742b-aa8a-456d-ad4c-211cab41a435.jpg)
 ## 画面遷移図
-![画面遷移図](https://user-images.githubusercontent.com/110333630/203734719-e70d57d7-f59b-4588-914c-417188f202e6.jpg)
+![画面遷移の図](https://user-images.githubusercontent.com/110333630/203803083-922329c0-0292-4750-8844-5ee3fd73293a.jpg)
 ## ワイヤーフレーム
 ![waiya](https://user-images.githubusercontent.com/110333630/203734790-83ca622c-9ebc-48bb-8b9d-42197480d64c.jpg)
