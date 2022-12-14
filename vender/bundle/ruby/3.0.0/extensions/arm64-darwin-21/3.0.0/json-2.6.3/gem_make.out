@@ -1,0 +1,13 @@
+current directory: /Users/takashimiyasato/workspace/labor_pains_online/vender/bundle/ruby/3.0.0/gems/json-2.6.3/ext/json
+/Users/takashimiyasato/.rbenv/versions/3.0.1/bin/ruby -I /Users/takashimiyasato/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20221214-40985-pq43or.rb extconf.rb
+creating Makefile
+
+current directory: /Users/takashimiyasato/workspace/labor_pains_online/vender/bundle/ruby/3.0.0/gems/json-2.6.3/ext/json
+make DESTDIR\= clean
+
+current directory: /Users/takashimiyasato/workspace/labor_pains_online/vender/bundle/ruby/3.0.0/gems/json-2.6.3/ext/json
+make DESTDIR\=
+make: Nothing to be done for `all'.
+
+current directory: /Users/takashimiyasato/workspace/labor_pains_online/vender/bundle/ruby/3.0.0/gems/json-2.6.3/ext/json
+make DESTDIR\= install
