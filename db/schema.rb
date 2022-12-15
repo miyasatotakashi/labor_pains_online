@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(version: 2022_12_14_115705) do
   enable_extension "plpgsql"
 
   create_table "partners", force: :cascade do |t|
-    t.string "user"
-    t.string "partners"
-    t.string "certification"
+    t.string "mother_id"
+    t.string "partners_id"
+    t.string "certification_code"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
