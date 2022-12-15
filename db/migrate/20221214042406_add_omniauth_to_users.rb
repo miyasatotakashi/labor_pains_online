@@ -4,5 +4,6 @@ class AddOmniauthToUsers < ActiveRecord::Migration[6.1]
     add_column :users, :uid, :string
     add_column :users, :name, :string
     add_column :users, :token, :string
+    add_column :users, :content, :string
   end
 end

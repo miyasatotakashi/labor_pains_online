@@ -15,7 +15,7 @@ class OmniauthCallbacksController < ApplicationController
       sign_in(:user, @profile)
     end
     flash[:notice] = "ログインしました"
-    redirect_to mains_path
+    redirect_to contacts_path
   end
 
   def fake_email(uid, provider)
