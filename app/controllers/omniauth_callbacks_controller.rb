@@ -2,7 +2,7 @@ class OmniauthCallbacksController < ApplicationController
   def line; basic_action end
 
   private
-  
+
   def basic_action
     @omniauth = request.env["omniauth.auth"]
     if @omniauth.present?
@@ -15,7 +15,7 @@ class OmniauthCallbacksController < ApplicationController
       sign_in(:user, @profile)
     end
     flash[:notice] = "ログインしました"
-    redirect_to root_path
+    redirect_to contacts_path
   end
 
   def fake_email(uid, provider)
