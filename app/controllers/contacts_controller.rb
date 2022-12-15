@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    certification_code = SecureRandom.hex(10)
   end
 
   # GET /contacts/1/edit
@@ -22,6 +23,9 @@ class ContactsController < ApplicationController
   # POST /contacts or /contacts.json
   def create
     @contact = Contact.new(contact_params)
+   
+    certification_code = SecureRandom.hex(10)
+    # @contact = Contact.new(mother_id: current_user, certification_code: SecureRandom.hex(10))
     if @contact.save
       ContactMailer.contact_mail(@contact).deliver  ##追記
       redirect_to contacts_path, notice: 'Contact was successfully created.'
@@ -61,6 +65,6 @@ class ContactsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def contact_params
-      params.require(:contact).permit(:name, :email, :content)
+      params.require(:contact).permit(:name, :email, :content, :mother_id, :certification_code)
     end
 end

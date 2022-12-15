@@ -1,7 +1,7 @@
-<h1>送信しました</h1>
+<h1><%= @contact.name %>様から招待メールが届きました</h1>
 
-<h4>name: <%= @contact.name %></h4>
+<h4>名前: <%= @contact.name %></h4>
 
-<h4>内容の確認</h4>
+<h4>招待コード</h4>
 
-<p>content: <%= @contact.content %></p>
+<p>招待コード <%= @contact.certification_code %></p>

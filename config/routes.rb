@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :contacts
+  resources :partners, only: [:new, :index, :create, :destroy, :edit]
+
   get 'top/index'
   devise_scope :user do
     root "top#index"
