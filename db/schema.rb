@@ -19,15 +19,18 @@ ActiveRecord::Schema.define(version: 2022_12_14_150523) do
     t.string "name", null: false
     t.string "email", null: false
     t.text "content"
+    t.string "mother_id"
+    t.string "partners_id"
+    t.string "certification_code", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "partners", force: :cascade do |t|
     t.string "mother_id", null: false
-    t.string "partners_id", null: false
+    t.string "partners_id"
     t.string "certification_code", null: false
-    t.string "name", null: false
+    t.string "email", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
