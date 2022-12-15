@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_14_115705) do
+ActiveRecord::Schema.define(version: 2022_12_14_150523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "partners", force: :cascade do |t|
-    t.string "user"
-    t.string "partners"
-    t.string "certification"
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2022_12_14_115705) do
     t.string "uid"
     t.string "name"
     t.string "token"
+    t.string "content"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
