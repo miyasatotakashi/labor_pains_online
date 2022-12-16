@@ -14,6 +14,7 @@
     <% @partners.each do |partner| %>
       <tr>
         <td><%= partner.email %></td>
+        <td><%= partner.certification_code %></td>
         <td><%= link_to 'Show', partner %></td>
         <td><%= link_to 'Edit', edit_partner_path(partner) %></td>
         <td><%= link_to 'Destroy', partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,3 +26,4 @@
 <br>
 
 <%= link_to 'New partner', new_partner_path %>
+<%= link_to 'Request partner', new_request_path %>

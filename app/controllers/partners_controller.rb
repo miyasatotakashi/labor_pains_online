@@ -6,6 +6,7 @@ class PartnersController < ApplicationController
   # GET /partners or /partners.json
   def index
     @partners = Partner.all
+    # if params[:patner][:code]
   end
 
   # GET /partners/1 or /partners/1.json
@@ -25,15 +26,10 @@ class PartnersController < ApplicationController
   # POST /partners or /partners.json
   def create
     @partner = Partner.new(partner_params)
-    # mother_id = params[:id]
-    # @partner = Partner.new(mother_id: current_user, certification_code: SecureRandom.hex(10))
-    # partner.check = true
-  
     
     if @partner.save
       PartnerMailer.partner_mail(@partner).deliver
-      # partnerMailer.partner_mail(@partner).deliver  ##追記
-      redirect_to partners_path, notice: 'Partner was successfully created.'
+      redirect_to partner_path(@partner), notice: 'Partner was successfully created.'
     else
       render :new
     end
@@ -61,6 +57,8 @@ class PartnersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.

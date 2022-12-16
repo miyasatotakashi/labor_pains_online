@@ -32,6 +32,9 @@ gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
 gem 'line-bot-api'
 gem 'rexml'
+gem 'pry-rails'
+gem 'better_errors'
+gem 'binding_of_caller'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
