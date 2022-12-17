@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-  has_many :belongings, dependent: :destroy
-  has_many :applies, dependent: :destroy
-  has_many :familys, through: :belongings
+  has_many :requests, dependent: :destroy
+  has_many :follows, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable,omniauth_providers: %i[line] 
