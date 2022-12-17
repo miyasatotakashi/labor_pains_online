@@ -1,2 +1,16 @@
 <h1>request_index</h1>
-<%= link_to 'Edit', request_path(@partner) %>
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+        <td><%= link_to "フォロー承認", allow_requests_path(app_id: current_user, acc_id: @partner), method: :post %></td>
+        <td><%= link_to "フォロー拒否", requests_path(app_id: current_user, acc_id: @invite), method: :delete %></td>
+      </tr>
+
+  </tbody>
+</table>

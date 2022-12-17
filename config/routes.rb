@@ -33,8 +33,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   # resources :requests, only: [:new, :show, :create]
   resources :requests
-    
-  resources :follows do
+  resources :requests do
   collection do
     post 'allow'
     end

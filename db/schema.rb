@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_12_16_082655) do
   end
 
   create_table "follows", force: :cascade do |t|
-    t.string "app_i"
+    t.string "app_id"
     t.string "acc_id"
     t.string "certification_code", null: false
     t.datetime "created_at", precision: 6, null: false

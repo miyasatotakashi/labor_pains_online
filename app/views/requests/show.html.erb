@@ -8,7 +8,6 @@
   </thead>
 
   <tbody>
-
         <td><%= link_to "フォロー承認", allow_follows_path(app_id: current_user, acc_id: @invite), method: :post %></td>
         <td><%= link_to "フォロー拒否", requests_path(app_id: current_user, acc_id: @invite), method: :delete %></td>
       </tr>
