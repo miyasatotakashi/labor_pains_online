@@ -12,8 +12,13 @@ class RequestsController < ApplicationController
     @invite = User.find(@partner.mother_id)
     @request = Request.new(app_id: current_user, acc_id: @invite, certification_code: @partner.certification_code )
     @user = User.find(@partner.mother_id)
-    @request.save
-    redirect_to partners_path
+    binding.irb
+    if @request.save
+      flash.notice = '承認申請を送りました'
+      redirect_to partners_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -42,16 +47,16 @@ class RequestsController < ApplicationController
     redirect_to partners_path
   end
 
-def unallow
-    @invite = User.find(@partner.mother_id)
-    @invite.destroy
-    redirect_to partners_path
-end
+  def unallow
+      @invite = User.find(@partner.mother_id)
+      @invite.destroy
+      redirect_to partners_path
+  end
 
   private
 
   def request_params
-    params.require(:request).permit(:certification_code)
+    params.require(:request).permit(:certification_code, :app_id, :acc_id)
   end
 
 end
