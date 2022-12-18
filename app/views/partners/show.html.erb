@@ -10,5 +10,10 @@
   <%= @partner.certification_code %>
 </p>
 
+<p>
+  <strong>日時:</strong>
+  <%= @partner.created_at %>
+</p>
+
 <%= link_to 'Edit', edit_partner_path(@partner) %> |
 <%= link_to 'Back', partners_path %>

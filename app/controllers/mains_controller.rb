@@ -1,7 +1,8 @@
 class MainsController < ApplicationController
   def index
+    @users = User.all
   end
-
+    
   def push_text
     client ||= Line::Bot::Client.new { |config|
     config.channel_secret = ENV["LINE_CHANNEL_SECRET"]

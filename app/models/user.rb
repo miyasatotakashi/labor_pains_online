@@ -23,4 +23,7 @@ class User < ApplicationRecord
     self.raw_info = raw_info.to_json
     self.save!
   end
+
+  has_many :requests, dependent: :destroy
+  has_many :follows, dependent: :destroy
 end

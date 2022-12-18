@@ -5,7 +5,7 @@ class CreateContacts < ActiveRecord::Migration[6.1]
       t.string :email, null: false
       t.text :content
       t.string :mother_id
-      t.string :partners_id
+      t.string :father_id
       t.string :certification_code, null: false
 
       t.timestamps

@@ -25,19 +25,26 @@ class PartnersController < ApplicationController
   # POST /partners or /partners.json
   def create
     @partner = Partner.new(partner_params)
+    if @partner.save
+      PartnerMailer.partner.mail(@partner).deliver
+      redirect_to partner_path(@partner), notice: '招待コードを発行しました'
+    else
+      render :new
+    end
+  end
     # mother_id = params[:id]
     # @partner = Partner.new(mother_id: current_user, certification_code: SecureRandom.hex(10))
     # partner.check = true
   
     
-    if @partner.save
-      PartnerMailer.partner_mail(@partner).deliver
-      # partnerMailer.partner_mail(@partner).deliver  ##追記
-      redirect_to partners_path, notice: 'Partner was successfully created.'
-    else
-      render :new
-    end
-  end
+  #   if @partner.save
+  #     PartnerMailer.partner_mail(@partner).deliver
+  #     # partnerMailer.partner_mail(@partner).deliver  ##追記
+  #     redirect_to partners_path, notice: 'Partner was successfully created.'
+  #   else
+  #     render :new
+  #   end
+  # end
 
   # PATCH/PUT /partners/1 or /partners/1.json
   def update
@@ -64,12 +71,12 @@ class PartnersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_partner
-      @partner = Partner.find(params[:id])
-    end
+  def set_partner
+    @partner = Partner.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def partner_params
-      params.require(:partner).permit(:name, :email, :mother_id, :certification_code)
-    end
+  # Only allow a list of trusted parameters through.
+  def partner_params
+    params.require(:partner).permit(:name, :email, :mother_id, :certification_code)
+  end
 end

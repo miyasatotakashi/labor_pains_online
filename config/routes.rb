@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
-  resources :contacts
+
+  resources :messages
+  namespace :partner do
+    resources :user, only: [:show] do
+      resource :requests, only:[:create, :destroy]
+    end
+  end
+  
+  namespace :user do
+    resources :user, only: [:show, :edit, :update] do
+      resources :follows, only:[:destroy, :show, :index]
+      post '/requests/:id' => 'requests#allow', as: 'allow'
+      resources :requests, only:[:index, :show, :destroy]
+    end
+  end
+
   resources :partners, only: [:new, :index, :create, :destroy, :edit]
 
   get 'top/index'
@@ -19,8 +34,18 @@ Rails.application.routes.draw do
   resources :mains do
     collection do
       post 'push_text'
+      post 'click_message'
     end
   end
+
+  resources :messages do
+    collection do
+      post 'click_message'
+    end
+  end
+
+  
+  get 'chat_channels', to: 'chat_channels#index'
 
   post '/callback', to: 'linebot#callback'
 

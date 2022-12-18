@@ -1,0 +1,4 @@
+<% if current_parent.already_requested?(student) %>
+  <%= link_to "フォローリクエスト取消", partner_user_requests_path(user_id:user.id), method: :delete %>
+<% else %>
+  <%= link_to "フォローリクエスト送信", partner_user_requests_path(user_id:user.id), method: :post %>

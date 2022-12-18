@@ -1,0 +1,15 @@
+<table.table.table-condensed>
+  <tr>
+    <td>
+      <|名前>
+    <td>
+    <td>
+  <% @pleases.each do |please| %>
+    <tr>
+      <td>
+       <%= please.partner.certification_code %>
+      <td>
+        <%= link_to "フォロー承認", user_user_allow_path(user_id:current_user.id, id:please.id), method: :post %>
+           
+      <td>
+        <%= link_to "フォロー拒否", user_user_request_path(user_id:current_user.id, id:please.id), method: :delete %>

@@ -1,0 +1,2 @@
+module ChatChannelsHelper
+end
