@@ -1,8 +1,0 @@
-<% if user_signed_in? %>
-
-    <%= form_with(scope: :partner, url: partners_path, method: :get, local: true) do |f| %>
-      <%= f.text_field :code %>
-      <%= f.submit "検索" %>
-    <% end %>
-
-<% end %>
