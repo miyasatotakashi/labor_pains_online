@@ -1,0 +1,16 @@
+<h1>Request#show</h1>
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+        <td><%= link_to "フォロー承認", allow_partners_path(@user, @partner, @request), method: :post %></td>
+        <td><%= link_to "フォロー拒否", allow_partners_path(@user, @partner, @request), method: :delete %></td>
+      </tr>
+
+  </tbody>
+</table>

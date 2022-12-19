@@ -11,12 +11,20 @@
   </head>
 
   <body>
+  <%= yield %>
+  <br>
+  <br>
   <% if user_signed_in? %>
   <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => "navbar-link" %>
+
+  <% if Request.find_by(acc_id: current_user.id).present? %>
+    <%= link_to "パ-トナ-申請が届きました", requests_path %>
+  <% end %>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
   <%= link_to "Sign in", new_user_session_path, :class => 'navbar-link' %>
 <% end %>
-<%= yield %>
+
+
   </body>
 </html>

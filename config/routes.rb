@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  resources :contacts
-  resources :partners, only: [:new, :index, :create, :destroy, :edit]
 
+  resources :partners, only: [:new, :index, :create, :destroy, :edit, :show]
+  resources :partners do
+    collection do
+      post 'allow'
+    end
+  end
   get 'top/index'
   devise_scope :user do
     root "top#index"
@@ -25,5 +29,9 @@ Rails.application.routes.draw do
   post '/callback', to: 'linebot#callback'
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  
+  resources :users, only: [:index, :show]
+  # resources :requests, only: [:new, :show, :create]
+  resources :requests
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

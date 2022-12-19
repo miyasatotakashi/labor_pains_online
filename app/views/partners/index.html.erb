@@ -14,6 +14,7 @@
     <% @partners.each do |partner| %>
       <tr>
         <td><%= partner.email %></td>
+        <td><%= partner.certification_code %></td>
         <td><%= link_to 'Show', partner %></td>
         <td><%= link_to 'Edit', edit_partner_path(partner) %></td>
         <td><%= link_to 'Destroy', partner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,5 +24,8 @@
 </table>
 
 <br>
-
-<%= link_to 'New partner', new_partner_path %>
+<%= link_to 'index', partners_path(@partner) %> 
+<%= link_to 'パートナーコード発行', new_partner_path %>
+<%= link_to 'パートナー認証画面', new_request_path %>
+<%= link_to '承認確認', requests_path(@user, @partner, @request) %>
+<%= link_to 'メイン画面', mains_path %> 

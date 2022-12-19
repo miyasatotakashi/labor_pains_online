@@ -11,9 +11,10 @@ class MainsController < ApplicationController
     type: 'text',
     text: "陣痛きたかも？"
     }
-    partner = User.where(invited_by_id: current_user.id).uid
+    # line_uid = User.where(partners_id: current_user.id).uid
+    line_uid = User.find(Partner.find_by(mother_id: current_user.id).partners_id).uid
     
-    response = client.push_message(partner, message)
+    response = client.push_message(line_uid, message)
     p response
     redirect_to mains_path
   end

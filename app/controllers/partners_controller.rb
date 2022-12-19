@@ -6,6 +6,8 @@ class PartnersController < ApplicationController
   # GET /partners or /partners.json
   def index
     @partners = Partner.all
+
+    # if params[:patner][:code]
   end
 
   # GET /partners/1 or /partners/1.json
@@ -25,15 +27,10 @@ class PartnersController < ApplicationController
   # POST /partners or /partners.json
   def create
     @partner = Partner.new(partner_params)
-    # mother_id = params[:id]
-    # @partner = Partner.new(mother_id: current_user, certification_code: SecureRandom.hex(10))
-    # partner.check = true
-  
     
     if @partner.save
       PartnerMailer.partner_mail(@partner).deliver
-      # partnerMailer.partner_mail(@partner).deliver  ##追記
-      redirect_to partners_path, notice: 'Partner was successfully created.'
+      redirect_to partner_path(@partner), notice: 'Partner was successfully created.'
     else
       render :new
     end
@@ -62,6 +59,22 @@ class PartnersController < ApplicationController
     end
   end
 
+  def allow
+    # @requests = Request.where(acc_id: current_user.id)
+    # @request = @requests.find_by(app_id: current_user.id)
+    @partner = Partner.find_by(mother_id: current_user.id)
+    @partner.partners_id = params[:partners_id]
+    if  @partner.save
+        @request.destroy
+        flash.notice = '承認しました'
+    redirect_to partners_path
+    end
+
+    # @partner = Partner.find_by(certification_code: params[:request][:certification_code])
+    # @follow = current_user.follow.new(app_id: current_user, acc_id: @invite, certification_code: @partner.certification_code )
+      #follow＿requestsコントローラーですが、parent_followsのnewメソッドです。
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_partner
@@ -70,6 +83,6 @@ class PartnersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def partner_params
-      params.require(:partner).permit(:name, :email, :mother_id, :certification_code)
+      params.require(:partner).permit(:id, :email, :mother_id, :partners_id, :certification_code )
     end
 end
