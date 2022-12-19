@@ -65,7 +65,7 @@ class PartnersController < ApplicationController
     @partner = Partner.find_by(mother_id: current_user.id)
     @partner.partners_id = params[:partners_id]
     if  @partner.save
-        @request.destroy
+        # @request.destroy
         flash.notice = '承認しました'
     redirect_to partners_path
     end
