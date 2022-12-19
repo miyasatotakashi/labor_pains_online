@@ -6,8 +6,6 @@ class PartnersController < ApplicationController
   # GET /partners or /partners.json
   def index
     @partners = Partner.all
-
-    # if params[:patner][:code]
   end
 
   # GET /partners/1 or /partners/1.json
@@ -67,7 +65,7 @@ class PartnersController < ApplicationController
     if  @partner.save
         # @request.destroy
         flash.notice = '承認しました'
-    redirect_to partners_path
+    redirect_to mains_path
     end
 
     # @partner = Partner.find_by(certification_code: params[:request][:certification_code])
