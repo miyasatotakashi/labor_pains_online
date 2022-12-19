@@ -60,10 +60,13 @@ class PartnersController < ApplicationController
   end
 
   def allow
+    # @requests = Request.where(acc_id: current_user.id)
+    # @request = @requests.find_by(app_id: current_user.id)
     @partner = Partner.find_by(mother_id: current_user.id)
     @partner.partners_id = params[:partners_id]
-    if @partner.save
-      flash.notice = '承認しました'
+    if  @partner.save
+        @request.destroy
+        flash.notice = '承認しました'
     redirect_to partners_path
     end
 
