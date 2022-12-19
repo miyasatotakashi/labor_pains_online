@@ -1,6 +1,7 @@
 require 'securerandom'
 
 class PartnersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_partner, only: %i[ show edit update destroy ]
 
   # GET /partners or /partners.json

@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
+<h2>
+  <strong>送信済みEmailアドレス</strong>
   <%= @partner.email %>
-</p>
+</h2>
 
-<p>
-  <strong>certification_code:</strong>
+<h2>
+  <strong>あなたへの招待コードは</strong>
   <%= @partner.certification_code %>
-</p>
+</h2>
 
-<%= link_to '確認', request_path(@partner) %> 
-<%= link_to 'Edit', edit_partner_path(@partner) %> |
-<%= link_to 'Back', partners_path %>
+<br>
+<br>
+<%= link_to 'パートナー登録へ戻る', partners_path %>
