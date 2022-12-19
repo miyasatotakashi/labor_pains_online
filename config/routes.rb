@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :partners, only: [:new, :index, :create, :destroy, :edit, :show]
   resources :partners do
     collection do
-      get 'search'
+      post 'allow'
     end
   end
   get 'top/index'
@@ -33,10 +33,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   # resources :requests, only: [:new, :show, :create]
   resources :requests
-  resources :requests do
-  collection do
-    post 'allow'
-    end
-  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

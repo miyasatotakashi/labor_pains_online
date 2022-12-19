@@ -18,17 +18,17 @@ module BindingOfCaller
     def callers
       ary = []
 
-      RubyVM::DebugInspector.open do |dc|
-        locs = dc.backtrace_locations
+      # RubyVM::DebugInspector.open do |dc|
+      #   locs = dc.backtrace_locations
 
-        locs.size.times do |i|
-          b = dc.frame_binding(i)
-          if b
-            b.instance_variable_set(:@iseq, dc.frame_iseq(i))
-            ary << b
-          end
-        end
-      end
+      #   locs.size.times do |i|
+      #     b = dc.frame_binding(i)
+      #     if b
+      #       b.instance_variable_set(:@iseq, dc.frame_iseq(i))
+      #       ary << b
+      #     end
+      #   end
+      # end
 
       ary.drop(1)
     end

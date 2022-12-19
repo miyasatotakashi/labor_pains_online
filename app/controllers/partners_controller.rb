@@ -6,6 +6,7 @@ class PartnersController < ApplicationController
   # GET /partners or /partners.json
   def index
     @partners = Partner.all
+
     # if params[:patner][:code]
   end
 
@@ -58,7 +59,18 @@ class PartnersController < ApplicationController
     end
   end
 
+  def allow
+    @partner = Partner.find_by(mother_id: current_user.id)
+    @partner.partners_id = params[:partners_id]
+    if @partner.save
+      flash.notice = '承認しました'
+    redirect_to partners_path
+    end
 
+    # @partner = Partner.find_by(certification_code: params[:request][:certification_code])
+    # @follow = current_user.follow.new(app_id: current_user, acc_id: @invite, certification_code: @partner.certification_code )
+      #follow＿requestsコントローラーですが、parent_followsのnewメソッドです。
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -68,6 +80,6 @@ class PartnersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def partner_params
-      params.require(:partner).permit(:name, :email, :mother_id, :certification_code)
+      params.require(:partner).permit(:id, :email, :mother_id, :partners_id, :certification_code )
     end
 end

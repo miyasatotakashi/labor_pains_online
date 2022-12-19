@@ -1,6 +1,9 @@
 class RequestsController < ApplicationController
 
   def index
+    @app_users = User.all
+    @app_users = Request.where(acc_id:current_user.id).select(:app_id)
+    # @app_users = User.where(id:[])
   end
 
   def new
@@ -10,9 +13,8 @@ class RequestsController < ApplicationController
   def create
     @partner = Partner.find_by(certification_code: params[:request][:certification_code])
     @invite = User.find(@partner.mother_id)
-    @request = Request.new(app_id: current_user, acc_id: @invite, certification_code: @partner.certification_code )
+    @request = Request.new(app_id: current_user.id, acc_id: @invite.id, certification_code: @partner.certification_code )
     @user = User.find(@partner.mother_id)
-    binding.irb
     if @request.save
       flash.notice = '承認申請を送りました'
       redirect_to partners_path
@@ -34,17 +36,6 @@ class RequestsController < ApplicationController
   def show
     @partner = Partner.find_by(certification_code: params[:request][:certification_code])
     @invite = User.find(@partner.mother_id)
-  end
-
-  def allow
-    binding.irb
-    @request = Request.find(params[:acc_id])
-    @partner = Partner.find_by(certification_code: params[:request][:certification_code])
-    @follow = current_user.follow.new(app_id: current_user, acc_id: @invite, certification_code: @partner.certification_code )
-      #follow＿requestsコントローラーですが、parent_followsのnewメソッドです。
-    @follow.save #parent_followに保存。
-    @request.destroy # follow_requestは削除
-    redirect_to partners_path
   end
 
   def unallow
