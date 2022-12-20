@@ -18,7 +18,7 @@ RSpec.describe "Partners", type: :system do
         click_on '送信'
         expect(page).to have_content '紹介コード認証'
       end
-      it '承認確認ページへからログアウトする' do
+      it '紹介コード認証ページからログアウトする' do
         click_on 'ログアウト'
         expect(page).to have_content 'トップページ'
       end

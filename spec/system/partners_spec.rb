@@ -46,7 +46,7 @@ RSpec.describe "Partners", type: :system do
         expect(page).to have_content 'トップページ'
       end
     end
-    context '承認確認ページ' do
+    context 'メインページ' do
       it 'メインページへ遷移する' do
         click_on 'メイン画面'
         expect(page).to have_content '陣痛'
