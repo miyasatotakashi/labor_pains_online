@@ -66,7 +66,7 @@ class PartnersController < ApplicationController
     @partner.partners_id = params[:partners_id]
     if  @partner.save
         # @request.destroy
-        flash.notice = '承認しました'
+        flash.notice = '承認しました。'
     redirect_to mains_path
     end
 
