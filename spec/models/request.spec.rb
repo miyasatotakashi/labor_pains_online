@@ -21,7 +21,7 @@ RSpec.describe "リクエストモデル機能", type: :model do
       end
       it 'バリデーションに失敗する' do
         request = Request.create(app_id: "1", acc_id: "1", certification_code:"" )
-        expect(request).to be_valid
+        expect(request).to be_invalid
       end
     end
   end

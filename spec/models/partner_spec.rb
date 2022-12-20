@@ -9,7 +9,7 @@ RSpec.describe "パートナーモデル機能", type: :model do
     context '送信先のメールアドレスが空の場合' do
       it 'バリデーションに失敗する' do
         partner = Partner.create(email: "", mother_id: "2", partners_id: "2", certification_code:"222222" )
-        expect(partner).to be_valid
+        expect(partner).to be_invalid
       end
       it 'バリデーションに失敗する' do
         partner = Partner.create(email: "user1@sample.com", mother_id: "", partners_id: "2", certification_code:"222222" )
