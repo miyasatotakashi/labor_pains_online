@@ -55,7 +55,7 @@ server "54.91.116.35",
   roles: %w{web app},
   ssh_options: {
     user: "app", # overrides user setting above
-    keys: %w(~/Downloads/labor_pains_on_line.pem),
+    keys: %w(~/Workspace/labor_pains_on_line.pem),
     forward_agent: false,
     auth_methods: %w(publickey password)
     # password: "please use keys"
