@@ -1,6 +1,6 @@
 <h1>紹介コード認証</h1>
 <%= form_with(model: @request, local: true) do |f| %>
-  <%= f.text_field :certification_code %>
+  <%= f.text_field :certification_code, placeholder: "紹介コード"%>
   <%= f.submit "送信" %>
 <% end %>
 <br>
