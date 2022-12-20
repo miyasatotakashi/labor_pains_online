@@ -54,6 +54,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'launchy'
+  
 end
 
 group :development do
@@ -66,6 +67,8 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'capistrano-safe-deploy-to' 
 end
 
 group :test do
