@@ -5,6 +5,10 @@ class RequestsController < ApplicationController
     @app_users = User.all
     @app_users = Request.where(acc_id:current_user.id).select(:app_id)
     # @app_users = User.where(id:[])
+
+    if Partner.find_by(mother_id: current_user.id).partners_id.present?
+      @fix_connect = "true"
+    end
   end
 
   def new

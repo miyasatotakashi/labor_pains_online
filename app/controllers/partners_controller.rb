@@ -59,8 +59,9 @@ class PartnersController < ApplicationController
   end
 
   def allow
+    # binding.irb
     # @requests = Request.where(acc_id: current_user.id)
-    # @request = @requests.find_by(app_id: current_user.id)
+    # @request = @requests.find_by(app_id: partner_id)
     @partner = Partner.find_by(mother_id: current_user.id)
     @partner.partners_id = params[:partners_id]
     if  @partner.save

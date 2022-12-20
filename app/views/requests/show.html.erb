@@ -8,9 +8,13 @@
   </thead>
 
   <tbody>
-        <td><%= link_to "フォロー承認", allow_partners_path(@user, @partner, @request), method: :post %></td>
-        <td><%= link_to "フォロー拒否", allow_partners_path(@user, @partner, @request), method: :delete %></td>
+  <% true じゃなかったら %>
+    <% @app_users.each do |user| %>
+      <tr>
+        <td><%= link_to "承認", allow_partners_path(partners_id: user.app_id), method: :post %></td>
+        <td><%= link_to "拒否", allow_partners_path(partners_id: user.app_id), method: :delete %></td>
       </tr>
-
-  </tbody>
+    <% end %>
+  <% end %>
+</tbody>
 </table>
