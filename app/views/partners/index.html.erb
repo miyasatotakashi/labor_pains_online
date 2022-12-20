@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>パートナー登録</h1>
+<%= image_tag "ninshin_akachan_onaka.png", :size =>'200x200' %><br>
 
 <table>
   <thead>
@@ -15,8 +16,8 @@
 </table>
 
 <br> 
-<%= link_to 'パートナーコード発行', new_partner_path %><br> 
+<%= link_to 'パートナーコード発行', new_partner_path, class: "btn btn-primary"%><br> 
 <br> 
-<%= link_to '紹介コード認証', new_request_path, data: {"turbolinks" => false}  %><br> 
+<%= link_to '紹介コード認証', new_request_path, data: {"turbolinks" => false},  class: "btn btn-primary"%><br> 
 <br> 
-<%= link_to 'メイン画面', mains_path %> 
+<%= link_to 'メイン画面', mains_path, class: "btn btn-primary" %> 

@@ -1,5 +1,7 @@
 <h1>陣痛onLINE</h1>
-<%= button_to "陣痛きたかも？", push_text_mains_path, {method: :posts} %>
-<br>
-<%= @jintsu_start_time&.strftime('%Y/%m/%d %H:%M:%S') %>
-<%= link_to 'パートナー登録へ戻る', partners_path %>
+  <%= button_to "陣痛きたかも？", push_text_mains_path, {method: :posts} %>
+  <br>
+  <%= image_tag "taiji.png", :size =>'240x300' %>
+  <br>
+  <%= @jintsu_start_time&.strftime('%Y/%m/%d %H:%M:%S') %>
+<%= link_to 'パートナー登録へ戻る', partners_path, class: "btn btn-primary" %>
