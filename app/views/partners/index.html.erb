@@ -17,8 +17,8 @@
 <br> 
 <%= link_to 'パートナーコード発行', new_partner_path %><br> 
 <br> 
-<%= link_to '紹介コード認証', new_request_path %><br> 
+<%= link_to '紹介コード認証', new_request_path, data: {"turbolinks" => false}  %><br> 
 <br> 
-<%= link_to '承認確認', requests_path(@user, @partner, @request) %><br> 
+<%= link_to '承認確認', requests_path(@user, @partner, @request)%><br> 
 <br> 
 <%= link_to 'メイン画面', mains_path %> 
