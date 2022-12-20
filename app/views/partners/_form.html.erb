@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, placeholder: "emailアドレス入力" %>
   </div>
 
   <%= form.hidden_field :certification_code, :value => @certification_code %>
@@ -21,6 +21,6 @@
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "招待コードを送信" %>
   </div>
 <% end %>
