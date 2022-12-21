@@ -9,9 +9,9 @@ RSpec.describe "Users", type: :system do
     context 'LINEログインボタンを押した場合' do
       it 'ログインができる' do
         visit new_user_session_path
-        page.all('a')[0].click
+        page.all('a')[1].click
         
-        expect(page).to have_content 'パートナー登録'
+        expect(page).to have_content '初期設定登録ページ'
       end
     end
   end

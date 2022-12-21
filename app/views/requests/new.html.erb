@@ -1,10 +1,16 @@
-<p id="notice"><%= notice %></p>
-<h1>紹介コード認証</h1>
+<h1>繋がりコード入力</h1>
 <%= form_with(model: @request, local: true) do |f| %>
-  <%= f.text_field :certification_code, placeholder: "紹介コード"%>
+  <%= f.text_field :certification_code, placeholder: "６桁のコード"%>
   <%= f.submit "送信" %>
 <% end %>
 <br>
+<p>コードを送信いただきましたら、LINEメッセージが送られてくるBOTとお友達登録をお願いします。</p>
+<br>
 <div class="line-it-button" data-lang="ja" data-type="friend" data-env="REAL"   data-lineId="@573vlsit" style="display: none;"></div>
 <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+<br>
+<br>
+<p>登録が完了しましたら、ログアウトして、LINEからのメッセージをお待ちください。</p>
+<br>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:" btn btn-outline-danger" %>
 

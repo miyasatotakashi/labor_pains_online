@@ -1,9 +1,5 @@
 class User < ApplicationRecord
   has_many :partners
-  # has_many :requests, dependent: :destroy
-  # has_many :follows, dependent: :destroy
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable,omniauth_providers: %i[line] 
 
   def social_profile(provider)
@@ -19,7 +15,6 @@ class User < ApplicationRecord
     access_secret = credentials["secret"]
     credentials = credentials.to_json
     name = info["name"]
-    # self.set_values_by_raw_info(omniauth['extra']['raw_info'])
   end
 
   def set_values_by_raw_info(raw_info)

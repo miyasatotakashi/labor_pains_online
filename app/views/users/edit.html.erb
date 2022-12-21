@@ -1,0 +1,13 @@
+<h1>ママ情報の編集ページ</h1>
+
+<%= form_with(model: @user, local: true) do |f| %>  
+  <%= f.label :名前 %>
+  <%= f.text_field :name %>
+  <%= f.label :産婦人科（病院） %>
+  <%= f.text_field :hospital %>
+  <%= f.label :赤ちゃんの名前（予定） %>
+  <%= f.text_field :baby_name %>
+  <%= f.label :出産予定日 %>
+  <%= f.date_field :scheduled_date %>
+  <%= f.submit "内容変更" %>
+<% end %>

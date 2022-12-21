@@ -1,0 +1,23 @@
+<h1>ママ情報登録</h1>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_with(model: @user, local: true) do |f| %>  
+  <%= f.label :名前 %>
+  <%= f.text_field :name %>
+  <%= f.label :産婦人科（病院） %>
+  <%= f.email_field :hospital %>
+  <%= f.label :赤ちゃんの名前（予定） %>
+  <%= f.password_field :baby_name %>
+  <%= f.label :出産予定日 %>
+  <%= f.password_field :scheduled_date %>
+  <%= f.submit "登録" %>
+<% end %>

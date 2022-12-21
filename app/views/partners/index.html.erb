@@ -1,23 +1,18 @@
-<p id="notice"><%= notice %></p>
+<h1>初期設定登録ページ</h1>
 
-<h1>パートナー登録</h1>
-<%= image_tag "ninshin_akachan_onaka.png", :size =>'200x200' %><br>
+<br>
+<p>ママ側はコチラから</p>
+<%= link_to '相手にメールを送る', new_partner_path, class: "btn btn-outline-primary" %>
+<p>初めに繋がりたい相手に「繋がりコード」が付与されたメールを送ります。</p>
+<br>
+<p>繋がりメールからログインされた方</p>
+<%= link_to '繋がりコード入力する', new_request_path, data: {"turbolinks" => false},  class: "btn btn-outline-primary" %>
+<br>
+<p>繋がりメールに添付された「繋がりコード」を入力し、LINEのお友達登録をお願いします。</p>
+<br>
+<p>コチラでお待ちください</p>
+<%= link_to 'ママの陣痛待機室', mains_path, class: "btn btn-outline-primary" %>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
 
-  </tbody>
-</table>
 
-<br> 
-<%= link_to 'パートナーコード発行', new_partner_path, class: "btn btn-primary"%><br> 
-<br> 
-<%= link_to '紹介コード認証', new_request_path, data: {"turbolinks" => false},  class: "btn btn-primary"%><br> 
-<br> 
-<%= link_to 'メイン画面', mains_path, class: "btn btn-primary" %> 

@@ -59,5 +59,11 @@ class RequestsController < ApplicationController
   def request_params
     params.require(:request).permit(:certification_code, :app_id, :acc_id)
   end
+  
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+
+
 
 end

@@ -4,8 +4,28 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :ママの名前 %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </>
+
+  <div class="field">
+    <%= f.label :産婦人科（病院）  %><br />
+    <%= f.text_field :hospital , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :出産予定日  %><br />
+    <%= f.date_field :scheduled_date , autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :赤ちゃんの名前（予定）  %><br />
+    <%= f.text_field :baby_name , autofocus: true %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -24,11 +44,6 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
   <div class="actions">

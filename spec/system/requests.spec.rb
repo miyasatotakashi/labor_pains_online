@@ -9,16 +9,16 @@ RSpec.describe "Partners", type: :system do
       Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:line]
       visit new_user_session_path
       # click_on  'line_login'
-      page.all('a')[0].click
+      page.all('a')[1].click
     end
 
     context 'リクエストページ' do
-      it '紹介コード認証ページが空の場合エラーメッセージを出力する' do
-        click_on '紹介コード認証'
+      it '繋がりコード入力ページが空の場合エラーメッセージを出力する' do
+        click_on '繋がりコード入力'
         click_on '送信'
-        expect(page).to have_content '紹介コード認証'
+        expect(page).to have_content '繋がりコード入力'
       end
-      it '紹介コード認証ページからログアウトする' do
+      it '繋がりコード入力ページからログアウトする' do
         click_on 'ログアウト'
         expect(page).to have_content 'トップページ'
       end

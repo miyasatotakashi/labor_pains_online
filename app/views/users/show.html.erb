@@ -1,0 +1,12 @@
+<br><br>
+<h1><%= @user.name %>ママの登録情報</h1>
+<br>
+<h3>ママの名前: <%= @user.name %></h3>
+<h3>産婦人科（病院）: <%= @user.hospital %></h3>
+<h3>赤ちゃんの名前（予定）: <%= @user.baby_name %></h3>
+<h3>出産予定日: <%= @user.scheduled_date %></h3>
+<br><br>
+<% if current_user.id == @user.id %>
+<%= button_to "ママの登録情報編集", edit_user_path(@user), method: :get, class: "btn btn-outline-primary mt-5" %>
+<% end %>
+<%= link_to '初期設定登録ページへ戻る', partners_path, class: "btn btn-outline-primary mt-5" %>

@@ -1,7 +1,7 @@
 <%= form_with(model: partner) do |form| %>
   <% if partner.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(partner.errors.count, "error") %> prohibited this partner from being saved:</h2>
+    <div id="error_explanation", class= "center_tag">
+      <h2><%= pluralize(partner.errors.count, "件") %>のエラーが発生しました。</h2>
 
       <ul>
         <% partner.errors.each do |error| %>
@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field center_mail">
     <%= form.label :email %>
     <%= form.text_field :email, placeholder: "emailアドレス入力" %>
   </div>

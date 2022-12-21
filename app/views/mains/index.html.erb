@@ -1,7 +1,9 @@
-<h1>陣痛onLINE</h1>
+<h1>ママの陣痛待機室</h1>
   <%= button_to "陣痛きたかも？", push_text_mains_path, {method: :posts} %>
   <br>
-  <%= image_tag "taiji.png", :size =>'240x300' %>
+  <br>
+  <%= image_tag "taiji.png", :size =>'200x300' %>
+  <br>
   <br>
   <%= @jintsu_start_time&.strftime('%Y/%m/%d %H:%M:%S') %>
-<%= link_to 'パートナー登録へ戻る', partners_path, class: "btn btn-primary" %>
+  <%= link_to '初期設定登録ページ登録へ戻る', partners_path, class: "btn btn-outline-primary" %>
