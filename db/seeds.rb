@@ -2,5 +2,5 @@
   User.create!(name: "user_#{i}",
   email: "sample_#{i}@example.com",
   password: "password",
-  encrypted_password: "password")
+  password_confirmation: "password")
 end
