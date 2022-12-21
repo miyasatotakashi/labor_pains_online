@@ -24,12 +24,10 @@ https://docs.google.com/spreadsheets/d/1YtLQ3Xczzy8skgY430RNQJu53TitRQGjxy7O0VAU
 ## テーブル定義書
 https://docs.google.com/spreadsheets/d/1YtLQ3Xczzy8skgY430RNQJu53TitRQGjxy7O0VAUflE/edit#gid=2020033787
 ## ER図
-
-![image](https://image.diveintocode.jp/26d7d0fd-97e1-441d-8543-12d7a80abe5b.png)
+![ERzuu](https://user-images.githubusercontent.com/110333630/208944291-03e4d7c6-0de3-40cd-93e1-dd0508869cae.jpg)
 
 ## 画面遷移図
-
-![image](https://image.diveintocode.jp/b2b396be-7099-4ff3-829b-7fca3d5e173a.png)
+![遷移ず](https://user-images.githubusercontent.com/110333630/208944213-156cc15c-6a10-4dca-9d95-a1b6ee567d1c.jpg)
 
 ## ワイヤーフレーム
 ![wff](https://user-images.githubusercontent.com/110333630/204015744-68270535-35a0-4d06-835c-40f3f2d81ef2.jpg)
