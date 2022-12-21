@@ -29,7 +29,7 @@ class PartnersController < ApplicationController
     
     if @partner.save
       PartnerMailer.partner_mail(@partner).deliver
-      redirect_to partner_path(@partner), notice: 'Partner was successfully created.'
+      redirect_to partner_path(@partner), notice: '送信しました'
     else
       render :new
     end
@@ -39,7 +39,7 @@ class PartnersController < ApplicationController
   def update
     respond_to do |format|
       if @partner.update(partner_params)
-        format.html { redirect_to partner_url(@partner), notice: "partner was successfully updated." }
+        format.html { redirect_to partner_url(@partner), notice: "編集しました" }
         format.json { render :show, status: :ok, location: @partner }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class PartnersController < ApplicationController
     @partner.destroy
 
     respond_to do |format|
-      format.html { redirect_to partners_url, notice: "partner was successfully destroyed." }
+      format.html { redirect_to partners_url, notice: "削除しました" }
       format.json { head :no_content }
     end
   end
