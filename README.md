@@ -25,10 +25,11 @@ https://docs.google.com/spreadsheets/d/1YtLQ3Xczzy8skgY430RNQJu53TitRQGjxy7O0VAU
 https://docs.google.com/spreadsheets/d/1YtLQ3Xczzy8skgY430RNQJu53TitRQGjxy7O0VAUflE/edit#gid=2020033787
 ## ER図
 
-![ERzuu](https://user-images.githubusercontent.com/110333630/208931932-364d1823-1c80-4cae-b0b3-16a75666fe8e.jpg)
+![image](https://image.diveintocode.jp/26d7d0fd-97e1-441d-8543-12d7a80abe5b.png)
 
 ## 画面遷移図
-![遷移図ver2](https://user-images.githubusercontent.com/110333630/208587163-2ee0e422-5faa-4ba1-afa6-3fb7ea0537c6.jpg)
+
+![image](https://image.diveintocode.jp/b2b396be-7099-4ff3-829b-7fca3d5e173a.png)
 
 ## ワイヤーフレーム
 ![wff](https://user-images.githubusercontent.com/110333630/204015744-68270535-35a0-4d06-835c-40f3f2d81ef2.jpg)
