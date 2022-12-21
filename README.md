@@ -24,7 +24,8 @@ https://docs.google.com/spreadsheets/d/1YtLQ3Xczzy8skgY430RNQJu53TitRQGjxy7O0VAU
 ## テーブル定義書
 https://docs.google.com/spreadsheets/d/1YtLQ3Xczzy8skgY430RNQJu53TitRQGjxy7O0VAUflE/edit#gid=2020033787
 ## ER図
-![ERzu (2)](https://user-images.githubusercontent.com/110333630/208587150-ea697c10-7b6e-43f2-b320-ad68b7f01ef1.jpg)
+
+![ERzuu](https://user-images.githubusercontent.com/110333630/208931932-364d1823-1c80-4cae-b0b3-16a75666fe8e.jpg)
 
 ## 画面遷移図
 ![遷移図ver2](https://user-images.githubusercontent.com/110333630/208587163-2ee0e422-5faa-4ba1-afa6-3fb7ea0537c6.jpg)
