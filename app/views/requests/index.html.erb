@@ -2,20 +2,19 @@
 <table>
   <thead>
     <tr>
-      <th>名前</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
 
   <tbody>
-  
+
       <% @app_users.each do |user| %>
-        <tr>
+        <tr class="center-block">
           <td><%= link_to "承認", allow_partners_path(partners_id: user.app_id), method: :post %></td>
           <td><%= link_to "拒否", allow_partners_path(partners_id: user.app_id), method: :delete %></td>
         </tr>
-      <% end %>
     <% end %>
+    
   </tbody>
 </table>
