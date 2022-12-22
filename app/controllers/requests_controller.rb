@@ -20,7 +20,6 @@ class RequestsController < ApplicationController
       @partner = Partner.find_by(certification_code: params[:request][:certification_code])
       @invite = User.find(@partner.mother_id)
       @request = Request.new(app_id: current_user.id, acc_id: @invite.id, certification_code: @partner.certification_code )
-      @user = User.find(@partner.mother_id)
       if @request.save
         flash.notice = '承認申請を送りました'
         redirect_to new_request_path

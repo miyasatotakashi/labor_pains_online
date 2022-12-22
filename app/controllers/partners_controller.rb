@@ -2,7 +2,7 @@ require 'securerandom'
 
 class PartnersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_partner, only: %i[ show edit update destroy ]
+  before_action :set_partner, only: %i[ show edit update ]
 
   # GET /partners or /partners.json
   def index
@@ -50,29 +50,22 @@ class PartnersController < ApplicationController
 
   # DELETE /partners/1 or /partners/1.json
   def destroy
-    @partner.destroy
+    @request = Request.find_by(app_id: params[:app_id])
+    @request.destroy
 
     respond_to do |format|
-      format.html { redirect_to partners_url, notice: "削除しました" }
+      format.html { redirect_to partners_url, notice: "申請を拒否しました" }
       format.json { head :no_content }
     end
   end
 
   def allow
-    # binding.irb
-    # @requests = Request.where(acc_id: current_user.id)
-    # @request = @requests.find_by(app_id: partner_id)
     @partner = Partner.find_by(mother_id: current_user.id)
-    @partner.partners_id = params[:partners_id]
+    @partner.partners_id = params[:app_id]
     if  @partner.save
-        # @request.destroy
         flash.notice = '承認しました。'
-    redirect_to mains_path
+        redirect_to mains_path
     end
-
-    # @partner = Partner.find_by(certification_code: params[:request][:certification_code])
-    # @follow = current_user.follow.new(app_id: current_user, acc_id: @invite, certification_code: @partner.certification_code )
-      #follow＿requestsコントローラーですが、parent_followsのnewメソッドです。
   end
 
   private
