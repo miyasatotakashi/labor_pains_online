@@ -26,7 +26,6 @@ class PartnersController < ApplicationController
   # POST /partners or /partners.json
   def create
     @partner = Partner.new(partner_params)
-    
     if @partner.save
       PartnerMailer.partner_mail(@partner).deliver
       redirect_to partner_path(@partner), notice: '送信しました'
@@ -60,9 +59,11 @@ class PartnersController < ApplicationController
   end
 
   def allow
+    @request = Request.find_by(app_id: params[:app_id])
     @partner = Partner.find_by(mother_id: current_user.id)
     @partner.partners_id = params[:app_id]
     if  @partner.save
+        @request.destroy
         flash.notice = '承認しました。'
         redirect_to mains_path
     end

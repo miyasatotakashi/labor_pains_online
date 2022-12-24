@@ -47,12 +47,6 @@ class RequestsController < ApplicationController
     @invite = User.find(@partner.mother_id)
   end
 
-  def unallow
-      @invite = User.find(@partner.mother_id)
-      @invite.destroy
-      redirect_to partners_path
-  end
-
   private
 
   def request_params
