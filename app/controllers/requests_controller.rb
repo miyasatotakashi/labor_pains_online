@@ -6,11 +6,6 @@ class RequestsController < ApplicationController
     @app_users = Request.where(acc_id:current_user.id).select(:app_id)
   end
 
-    # if Partner.find_by(mother_id: current_user.id).partners_id.present?
-    #   @fix_connect = "true"
-    
-  
-
   def new
     @request = Request.new
   end
@@ -56,7 +51,5 @@ class RequestsController < ApplicationController
   def update_resource(resource, params)
     resource.update_without_password(params)
   end
-
-
 
 end
