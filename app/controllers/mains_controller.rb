@@ -11,15 +11,12 @@ class MainsController < ApplicationController
     type: 'text',
     text: "陣痛きたかも？"
     }
-    # line_uid = User.where(partners_id: current_user.id).uid
     line_uid = User.find(Partner.find_by(mother_id: current_user.id).partners_id).uid
-
-    @jintsu_start_time = DateTime.now # 陣痛の時間を生成
-    # 陣痛の時間をDBにsaveする
-    
     response = client.push_message(line_uid, message)
     p response
-    # redirect_to mains_path
+    @jintsu_start_time = DateTime.now
+    
+    # 陣痛の時間をDBにsaveする
     render :index
   end
 end
