@@ -1,4 +1,5 @@
 class MainsController < ApplicationController
+
   def index
   end
 
@@ -14,9 +15,13 @@ class MainsController < ApplicationController
     line_uid = User.find(Partner.find_by(mother_id: current_user.id).partners_id).uid
     response = client.push_message(line_uid, message)
     p response
-    @jintsu_start_time = DateTime.now
     
+    # @jintsu_start_time = Clock.new(params[:start_time])
+    @jintsu_start_time = DateTime.now.strftime('%Y/%m/%d %H:%M:%S')
+    Clock.create(start_time: @jintsu_start_time)
+    # @jintsu_start_time.save
     # 陣痛の時間をDBにsaveする
     render :index
   end
+
 end
