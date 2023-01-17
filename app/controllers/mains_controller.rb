@@ -1,6 +1,7 @@
 class MainsController < ApplicationController
 
   def index
+    @clocks = Clock.all
   end
 
   def push_text
@@ -17,8 +18,8 @@ class MainsController < ApplicationController
     p response
     
     # @jintsu_start_time = Clock.new(params[:start_time])
-    @jintsu_start_time = DateTime.now.strftime('%Y/%m/%d %H:%M:%S')
-    Clock.create(start_time: @jintsu_start_time)
+    @jintsu_start_time = DateTime.now
+    
     # @jintsu_start_time.save
     # 陣痛の時間をDBにsaveする
     render :index
