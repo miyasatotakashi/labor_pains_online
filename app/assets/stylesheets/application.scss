@@ -13,6 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700');
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "游ゴシック体", "Yu Gothic",
+  YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
 .center_tag {
   display: block;
   margin: 0 auto;
@@ -35,7 +43,7 @@
 
 .logo_area {
   width: 250px;
-  margin-left: 20rem;
+  margin-left: 32rem;
 }
 
 .logo {

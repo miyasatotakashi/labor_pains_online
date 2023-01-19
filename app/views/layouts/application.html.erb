@@ -16,12 +16,9 @@
       <a class="navbar-brand" href="/">
       <%= image_tag 'logo.png',  class: "logo" %></a>
       </div>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <% if user_signed_in? %>
-              <li class="nav-item">
-              <%= link_to 'ママの情報', user_path(current_user), class: "nav-link btn btn-outline-primary " %>
-              </li>
               <li class="nav-item">
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link btn btn-outline-danger" %>
               </li>

@@ -11,10 +11,10 @@
     <% end %>
   <br>
   <br>
-  
-  <br>
+  <h3>前回の陣痛時間</h3>
   <br>
   <%= @jintsu_start_time&.strftime('%Y/%m/%d %H:%M:%S') %>
   <br>
   <br>
   <%= link_to '初期設定登録ページ登録へ戻る', partners_path, class: "btn btn-outline-primary" %>
+  <%= link_to 'ママの情報', user_path(current_user), class: "btn btn-outline-primary " %>
